@@ -1,12 +1,13 @@
 requests
 clint
 bidict
-numpy
+numpy==1.18
 pandas
-gensim
+gensim==3.8.3
 cython
 stop_words
 chinese_whispers
-spacy
-sklearn
+spacy==2.1.3
+scipy==1.1.0
+scikit-learn==0.21.3
 tqdm
