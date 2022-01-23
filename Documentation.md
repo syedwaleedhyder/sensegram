@@ -20,26 +20,29 @@ python3 create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/raw
 ## Outputs:
 Trains the models and store them under _output_models_base_path/corpus_name_
 
-**Generate senses from a list of word:**
+# Generate senses from a list of word:
+## Command:
 ```
 python syed_load_word_and_sense_vectors_for_senses.py 
 ```
-Inputs:
-Outputs:
+## Inputs:
+## Outputs:
 
-**Reduce the dimensions of word vectors for better visualization.**
+# Reduce the dimensions of word vectors for better visualization.
+## Command:
 ```
 python3 reduce_dimensions_wordvectors.py 
 ```
-Inputs:
-Outputs:
+## Inputs:
+## Outputs:
 
-**Bag of words:**
+# Bag of words:
+## Command:
 ```
 python bag_of_words.py
 ```
-Inputs:
-Outputs:
+## Inputs:
+## Outputs:
 
 # Steps for installation
 
