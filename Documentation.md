@@ -3,12 +3,22 @@
 conda activate sensegram_env
 ```
 
-**Train models from a given corpus**
+# Train models from a given corpus
+## Command:
 ```
 python3 create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/raw_corpus/Ea_L_17547339_W_185687361new.txt -N 300 -n 300 -num_of_models 10
 ```
-Inputs:
-Outputs:
+## Inputs:
+ - train_corpus [Path to a training corpus in text form]. NO FLAG NEEDED.
+ - -cbow [Use the continuous bag of words model (default is 1, use 0 for the skip-gram model)]. FLAG NEEDED
+ - -size [Set size of word vectors (default is 300)]. FLAG NEEDED
+ - -N [Number of nodes in each ego-network (default is 200)]. FLAG NEEDED
+ - -n [Maximum number of edges a node can have in the network (default is 200)]. FLAG NEEDED. (Does not effect the results, but use N and n equal to keep consistent filenames.)
+ - -num_of_models [Number of models to be trained (default 1)]. FLAG NEEDED.
+ - -output_models_base_path [output_models_base_path (default model/). This is the where the models will be stored. Recommended to use the default path]. FLAG NEEDED.
+
+## Outputs:
+Trains the models and store them under _output_models_base_path/corpus_name_
 
 **Generate senses from a list of word:**
 ```
