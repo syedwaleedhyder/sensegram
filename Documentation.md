@@ -20,13 +20,24 @@ python3 create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/raw
 ## Outputs:
 Trains the models and store them under _output_models_base_path/corpus_name_
 
+
 # Generate senses from a list of word:
 ## Command:
 ```
 python syed_load_word_and_sense_vectors_for_senses.py 
 ```
 ## Inputs:
+Set the following variables in the file before executing the command.
+ - corpus_name 
+ - model_base_dir [Directory in which the models are present]
+
+Effective directory path used to load the models is: 
+_model_base_dir/corpus_name_
+
+ - The code asks for the path of file which contains words to get senses.
 ## Outputs:
+It creates a directory _word_senses/corpus_name_ which contains csv files for each word provided in the input.
+
 
 # Reduce the dimensions of word vectors for better visualization.
 ## Command:
