@@ -39,13 +39,18 @@ _model_base_dir/corpus_name_
 It creates a directory _word_senses/corpus_name_ which contains csv files for each word provided in the input.
 
 
-# Reduce the dimensions of word vectors for better visualization.
+# Reduce the dimensions of word vectors for better visualization using PCA.
 ## Command:
 ```
 python3 reduce_dimensions_wordvectors.py 
 ```
 ## Inputs:
+ - corpus_name [Name of the corpus. Models of which will be used to generate word vectors. Models should be stored in the directory model/]
+ - words_to_get_senses_filename [Path to the file which contains the list of words. Each line should have only one word.]
+ - path_to_save_file [Line 144-147. Path where to save the PCA output file.]
 ## Outputs:
+ - Writes a CSV file on the specified path. It has columns: word, X,	Y,	Z,	word_vector
+
 
 # Bag of words:
 ## Command:
