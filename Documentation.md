@@ -49,7 +49,7 @@ python3 reduce_dimensions_wordvectors.py
  - words_to_get_senses_filename [Path to the file which contains the list of words. Each line should have only one word.]
  - path_to_save_file [Line 144-147. Path where to save the PCA output file.]
 ## Outputs:
- - Writes a CSV file on the specified path. It has columns: word, X,	Y,	Z,	word_vector
+ - Writes a CSV file on the specified path after performing PCA. It has columns: word, X,	Y,	Z,	word_vector
 
 
 # Bag of words:
@@ -58,7 +58,14 @@ python3 reduce_dimensions_wordvectors.py
 python bag_of_words.py
 ```
 ## Inputs:
+ - corpus_name [Path to the folder which contains the models we need to use e.g. corpus_name = "/media/sensegram/38d2342b-a798-4821-a3b9-16efbcf34f12/model/sample.txt"]
+ - word_to_process_for_BoW_FILENAME [Path to the file to be processed e.g. word_to_process_for_BoW_FILENAME = "words_to_get_senses/holliday.txt"]
 ## Outputs:
+This file writes three files.
+ 1. PCA file as above in reduce_dimensions_wordvectors with extra column BoW. It has columns: BoW, word, X,	Y,	Z,	word_vector
+ 2. Aggregated PCA file for each bag of word. It has columns: BoW,	X,	Y,	Z,	similar_words
+ 3. Distance matrix between all the bag of words. 
+
 
 # Steps for installation
 
