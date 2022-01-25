@@ -35,8 +35,17 @@ Effective directory path used to load the models is:
 _model_base_dir/corpus_name_
 
  - The code asks for the path of file which contains words to get senses.
+
+### Example 
+word
+<br>because
+<br>belong
+
 ## Outputs:
 It creates a directory _word_senses/corpus_name_ which contains csv files for each word provided in the input.
+
+### Example
+![image](https://user-images.githubusercontent.com/22868291/151033691-18e7dc3e-9547-4b63-94db-5d0a08f0e87d.png)
 
 
 # Reduce the dimensions of word vectors for better visualization using PCA.
