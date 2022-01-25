@@ -60,11 +60,41 @@ python bag_of_words.py
 ## Inputs:
  - corpus_name [Path to the folder which contains the models we need to use e.g. corpus_name = "/media/sensegram/38d2342b-a798-4821-a3b9-16efbcf34f12/model/sample.txt"]
  - word_to_process_for_BoW_FILENAME [Path to the file to be processed e.g. word_to_process_for_BoW_FILENAME = "words_to_get_senses/holliday.txt"]
+
+### Example:
+(words_to_get_senses/works.txt)
+<br>cities: paris#1, london#1, lahore#1, dubai#1
+<br>furniture: table#1, chair#1, seat#1, bed#1
+<br>pets: dog#1, cat#1, fish#1, rabbit#1,
+<br>food: bread#1, burger#1, pizza#1, hotdog#1
+<br>fruits: apple#1,orange#1, banana#1
+<br>winter_weather: snow#1, hail#1, ice#1, cold#1
+<br>colours: red#1, blue#1, black#1, green#1, white#1, pink#1
+
 ## Outputs:
 This file writes three files.
  1. PCA file as above in reduce_dimensions_wordvectors with extra column BoW. It has columns: BoW, word, X,	Y,	Z,	word_vector
  2. Aggregated PCA file for each bag of word. It has columns: BoW,	X,	Y,	Z,	similar_words
  3. Distance matrix between all the bag of words. 
+
+### Example
+#### 1.
+BoW	word	X	Y	Z	word_vector
+<br>furniture	desk#1	1.20031621055252	0.325482087659498	-0.398094754779704	[ 0.09106176  0.0579374   0.02598179 ...  0.04057969  0.03202484  -0.01632051]
+<br>furniture	bus#1	1.20007876152443	0.098693501039042	-0.255482184779384	[ 0.07297327  0.05974918  0.04270832 ...  0.01397101 -0.00664327  -0.00812657]
+<br>furniture	ride#1	1.15872225838677	0.460562932932283	-0.096189247875183	[ 0.10819038  0.07170317  0.02553471 ...  0.01673624  0.00511917  -0.0291835 ]
+<br>furniture	kitchen#1	1.03118766614974	0.369546799492503	-0.472118439933155	[ 0.11344537  0.06694352  0.00466962 ...  0.03174785  0.02868408  -0.00885597]
+<br>furniture	dark#1	0.546288542595897	0.449046659920669	0.27187627117154	[ 0.03741607  0.03636116 -0.03560129 ... -0.0062227  -0.01622491   0.02159884]
+<br>furniture	alarm#1	0.410922275426199	-0.013808111110877	-0.375357141603995	[ 0.06155611  0.03996786  0.01621729 ...  0.03550377  0.00671058  -0.01469874]
+
+#### 2.
+BoW	X	Y	Z	similar_words <br><br>
+food	-0.661367628807547	0.619068444717633	-0.021656926517855	{'gin#1', 'chicken#1', 'beef#1', 'banana#1', 'garlic#1', 'toast#1', 'roast#1', 'cheese#1', 'burger#1', 'coke#1', 'steak#1', 'sandwich#1', 'fruit#1', 'veg#1', 'eggs#1', 'pie#1', 'sandwiches#1', 'sausage#1', 'bread#1', 'crisps#1', 'sauce#1', 'fish#1', 'tonic#1', 'diet#1', 'baked#1', 'pasta#1', 'biscuits#1', 'soup#1', 'chilli#1', 'cakes#1', 'choc#1', 'beans#1', 'bacon#1', 'jam#1', 'chips#1', 'curry#1', 'fresh#1', 'cream#1', 'butter#1', 'egg#1', 'champagne#1', 'vodka#1', 'salad#1', 'yum#1', 'potato#1', 'ice#1', 'cake#1', 'pizza#1', 'milk#1', 'sugar#1', 'meat#1'}
+<br><br>fruits	-0.529618390762956	-0.111580586794987	-0.052685197260453	{'raspberry#1', 'whisky#1', 'cookie#1', 'cider#1', 'banana#1', 'raw#2', 'bean#1', 'drizzle#1', 'buttons#1', 'cookies#1', 'tonic#1', 'protein#1', 'peanut#1', 'vinegar#1', 'lime#1', 'burger#1', 'olive#1', 'onion#1', 'tin#1', 'plastic#1', 'earl#1', 'belly#1', 'thai#1', 'flavoured#1', 'spray#1', 'yoghurt#1', 'raw#1', 'tart#1', 'custard#1', 'tomato#1', 'nut#1', 'linen#1', 'tomatoes#1', 'gloves#1', 'pots#1', 'salmon#1', 'crisps#1', 'cherry#1', 'polish#1', 'inch#1', 'cereal#1', 'plate#1', 'soya#1', 'strawberry#1', 'apple#1', 'perfume#1', 'chinese#1', 'cucumber#1', 'icecream#2', 'juice#1', 'knife#1', 'chip#1', 'loaf#1', 'coconut#1', 'smoothie#1', 'baked#1', 'leather#1', 'belt#1', 'mash#2', 'orange#1', 'pear#1', 'pepper#1', 'espresso#2', 'tan#2', 'freezer#1', 'choc#1', 'espresso#1', 'salt#1', 'booze#1', 'caramel#1', 'slices#1', 'yellow#1', 'dish#1', 'spicy#1', 'dairy#1', 'iced#1', 'oil#2', 'corn#1', 'lavender#1', 'rice#1', 'frozen#1', 'lolly#1', 'homemade#1', 'biscuit#1'}
+<br><br>furniture	0.866997900385184	0.211784072487465	-0.25526569665062	{'desk#1', 'screen#2', 'bus#1', 'ride#1', 'kitchen#1', 'dark#1', 'alarm#1', 'walk#1', 'drive#2', 'floor#1', 'mile#1', 'hole#1', 'outside#1', 'left#2', 'seat#1', 'bathroom#1', 'empty#2', 'bike#1', 'fire#1', 'screen#1', 'duvet#1', 'bed#1', 'pool#1', 'winter#1', 'corner#1', 'shop#1', 'chair#1', 'oven#1', 'flat#1', 'river#1', 'machine#1', 'window#1', 'room#1', 'sitting#1', 'light#1', 'step#1', 'way#2', 'sofa#1', 'fridge#1', 'washing#1', 'door#1', 'house#1', 'roof#1', 'bar#1', 'walking#2', 'tree#1', 'place#2', 'wall#1', 'pub#1', 'box#1', 'air#1', 'bedroom#1', 'journey#1', 'garden#1', 'table#1', 'pack#1', 'pjs#1', 'lights#1', 'doors#1', 'office#1', 'storm#1', 'car#1', 'heat#1'}
+
+#### 3.
+![image](https://user-images.githubusercontent.com/22868291/151029874-a2d6e0a6-24a8-4397-a831-e12a23072feb.png)
 
 
 # Steps for installation
