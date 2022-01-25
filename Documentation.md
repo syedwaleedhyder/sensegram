@@ -48,8 +48,23 @@ python3 reduce_dimensions_wordvectors.py
  - corpus_name [Name of the corpus. Models of which will be used to generate word vectors. Models should be stored in the directory model/]
  - words_to_get_senses_filename [Path to the file which contains the list of words. Each line should have only one word.]
  - path_to_save_file [Line 144-147. Path where to save the PCA output file.]
+
+### Example 
+word
+<br>because
+<br>belong
+
 ## Outputs:
  - Writes a CSV file on the specified path after performing PCA. It has columns: word, X,	Y,	Z,	word_vector
+### Example
+word	X	Y	Z	word_vector
+know#1	0.042678845870709	1.84172737636189	0.219532032706539	[-0.00445312  0.02521706  0.06794521 ... -0.0051711  -0.05367299   0.0570246 ]
+it#1	-1.00615402843201	0.068563908244432	0.810797539348226	[ 0.01901305  0.01266508  0.06339029 ... -0.0460179   0.00458821   0.03217988]
+because#1	-0.219415038384593	0.919801487363445	0.596360836775124	[ 0.02768713  0.00505522  0.07169732 ...  0.01527843 -0.00958562   0.02164705]
+pain#1	0.11036348385649	-0.72624835987096	0.326537689271145	[-0.10797457  0.03026501 -0.05312319 ... -0.03365547 -0.00602931  -0.00088333]
+remember#1	0.159423898008495	1.76650607600389	0.10264954091651	[-0.03116777  0.00351258  0.04525061 ... -0.01563067 -0.04849707   0.02050507]
+ego#1	1.59470951533283	-0.914308073209488	0.311534240733845	[-0.08355454 -0.0006044  -0.0421834  ... -0.00962467  0.01350354  -0.01859214]
+![image](https://user-images.githubusercontent.com/22868291/151032689-80cfc0a4-ef16-46cd-944d-1bf847c2ef5a.png)
 
 
 # Bag of words:
