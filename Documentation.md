@@ -126,4 +126,24 @@ food	-0.661367628807547	0.619068444717633	-0.021656926517855	{'gin#1', 'chicken#
 
 
 # Steps for installation
+(https://docs.anaconda.com/anaconda/install/linux/#installation)
+## Install the anaconda
+ - Download the anaconda from link: https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
+ - Enter the following on terminal to install Anaconda ```bash ~/Downloads/Anaconda3-2020.02-Linux-x86_64.sh```
+ - The installer prompts "In order to continue the installation process, please review the license agreement." Click Enter to view license terms.
+ - Scroll to the bottom of the license terms and enter “Yes” to agree.
+ - Press Enter
+ - The installer prompts “Do you wish the installer to initialize Anaconda3 by running conda init?” Choose “yes”.
+ - The installer finishes and displays “Thank you for installing Anaconda<2 or 3>!”
+ - Close and open your terminal window for the installation to take effect.
+ 
+## Placing the environment
+After the successful installation of anaconda:
+ - Place the provided environment zip file ~/anaconda/envs/
+ - Unzip the file here. 
 
+## Using the environment
+After successfully following above steps, the environment is ready to use. It can be activated using the command:
+```
+conda activate sensegram_env
+```
