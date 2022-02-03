@@ -3,6 +3,9 @@
 conda activate sensegram_env
 ```
 
+The reason for doing this is to isolate the working enivronment of the sensegram from the other projects. 
+Otherwise, there is a risk that some other project requires a package which conflicts with the packages required for sensegram.
+
 # Train models from a given corpus
 ## Command:
 ```
