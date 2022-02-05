@@ -10,7 +10,7 @@ While working on other projects, make sure that the **sensegram_env** is not act
 # Train models from a given corpus
 ## Command:
 ```
-python3 create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/raw_corpus/Ea_L_17547339_W_185687361new.txt -N 300 -n 300 -num_of_models 10
+python3 1_create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/raw_corpus/Ea_L_17547339_W_185687361new.txt -N 300 -n 300 -num_of_models 10
 ```
 ## Inputs:
  - train_corpus [Path to a training corpus in text form]. NO FLAG NEEDED.
@@ -28,7 +28,7 @@ Trains the models and store them under _output_models_base_path/corpus_name_
 # Generate senses from a list of word:
 ## Command:
 ```
-python syed_load_word_and_sense_vectors_for_senses.py 
+python 1_syed_load_word_and_sense_vectors_for_senses.py 
 ```
 ## Inputs:
 Set the following variables in the file before executing the command.
@@ -55,7 +55,7 @@ It creates a directory _word_senses/corpus_name_ which contains csv files for ea
 # Reduce the dimensions of word vectors for better visualization using PCA.
 ## Command:
 ```
-python3 reduce_dimensions_wordvectors.py 
+python3 1_reduce_dimensions_wordvectors.py 
 ```
 ## Inputs:
  - corpus_name [Name of the corpus. Models of which will be used to generate word vectors. Models should be stored in the directory model/]
@@ -83,7 +83,7 @@ ego#1	1.59470951533283	-0.914308073209488	0.311534240733845	[-0.08355454 -0.0006
 # Bag of words:
 ## Command:
 ```
-python bag_of_words.py
+python 1_bag_of_words.py
 ```
 ## Inputs:
  - corpus_name [Path to the folder which contains the models we need to use e.g. corpus_name = "/media/sensegram/38d2342b-a798-4821-a3b9-16efbcf34f12/model/sample.txt"]
