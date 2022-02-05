@@ -139,6 +139,7 @@ food	-0.661367628807547	0.619068444717633	-0.021656926517855	{'gin#1', 'chicken#
  
 ## Placing the environment
 After the successful installation of anaconda:
+ - Environment zip file is place on path: /home/sensegram/sense_bespoke/sensegram_env.zip
  - Place the provided environment zip file in: ~/anaconda/envs/
    - Absoulte path on sensegram machine is: /home/sensegram/anaconda/envs
  - Unzip the file here. 
