@@ -1,3 +1,18 @@
+# SENSE2VEC
+https://github.com/explosion/sense2vec
+
+## Create environment
+ - conda create --name sense2vec
+ - conda activate sense2vec
+ - conda install matplotlib
+ - pip install sense2vec
+ - python3 -m spacy download en_core_web_sm
+
+## Usage 
+ - python standalone_usage.py
+ - python usage_as_a_spaCy_pipeline_component.py
+
+# SENSEGRAM
 **Before doing any activity, we need to activate the sensegram environment using the following command:**
 ```
 conda activate sensegram_env
