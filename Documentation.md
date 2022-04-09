@@ -33,9 +33,9 @@ python3 1_create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/r
 ```
 ## Inputs:
  - train_corpus: Path to a training corpus in text form. The sensgram models will be trained on this corpus. NO FLAG NEEDED. 
- - -cbow: Select the type of Word2Vec algorithm for training the model. Use 1 for the continuous bag of words model, use 0 for the skip-gram model (default is 1). FLAG NEEDED
- - -size: Size of the vector of each word present in the sensegram model. Set size of word vectors (default is 300). FLAG NEEDED
- - -N: Number of nodes in each ego-network/sub-graphs of neighbouring words for creating the clusters/senses of a word.(default is 200). FLAG NEEDED
+ - -cbow: Select the type of Word2Vec algorithm for training the model. Use 1 for the continuous bag of words model, use 0 for the skip-gram model (default is 1). The CBOW model learns the embedding by predicting the current word based on its context. The continuous skip-gram model learns by predicting the surrounding words given a current word. The continuous skip-gram model learns by predicting the surrounding words given a current word. FLAG NEEDED
+ - -size: Size of the vector of each word present in the sensegram model. Set size of word vectors (default is 300). A word embedding/vector is a learned representation for text where words that have the same meaning have a similar representation. Typically, the length of these vectors 100–300 dimensions but it is recommended to use 300 as per the academic literature. FLAG NEEDED
+ - -N: Number of nodes in each ego-network/sub-graphs of neighbouring words for creating the clusters/senses of a word. For example, if we set this value to be 200, while creating senses for a word, 200 nearest neighbours words will be considered for creating senses (default is 200). FLAG NEEDED
  - -n: Maximum number of edges a node can have in the network (default is 200). It does not effect the results, but use N and n equal to keep consistent filenames. FLAG NEEDED. 
  - -num_of_models: Number of models we need to train for a single corpus. Number of models to be trained (default 1). FLAG NEEDED.
  - -output_models_base_path: Base path of the directory where we need to store the models. (default model/). This is the where all the trained models will be stored. Recommended to use the default path. FLAG NEEDED.
