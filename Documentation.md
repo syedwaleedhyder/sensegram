@@ -25,10 +25,7 @@ While working on other projects, make sure that the **sensegram_env** is not act
 # Train models from a given corpus
 
 ```
-usage: 1_create_multiple_models_from_raw_text_file.py [-h] [-cbow CBOW] [-size SIZE] [-window WINDOW]
-                [-threads THREADS] [-iter ITER] [-min_count MIN_COUNT] [-N N]
-                [-n N] [-min_size MIN_SIZE] [-make-pcz]
-                train_corpus
+usage: 1_create_multiple_models_from_raw_text_file.py [-h] [-cbow CBOW] [-size SIZE] [-N N] [-n N] [-num_of_models NUM_OF_MODELS] [-output_models_base_path OUTPUT_MODELS_BASE_PATH] train_corpus
 ```
 ## Command:
 ```
