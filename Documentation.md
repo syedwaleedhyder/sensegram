@@ -39,6 +39,12 @@ python3 1_create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/r
      - Because Skip-gram rely on single words input, it is less sensitive to overfit frequent words, because even if frequent words are presented more times that rare words during training, they still appear individually, while CBOW is prone to overfit frequent words because they appear several time along with the same context.
      - Skip-gram works well with a small amount of the training data, represents well even rare words or phrases, whereas CBOW gives slightly better accuracy for the frequent words.
      <img src="https://user-images.githubusercontent.com/22868291/162568127-e946366c-d640-4502-bc6a-8bc747f175bb.png" alt="cbow skipgram diagram" width="500"/>
+     
+     - Example of skip-gram
+     <img src="https://user-images.githubusercontent.com/22868291/163095522-bb3ebccf-d27a-4ebf-ae3d-f77f15d5d5b4.png" alt="skipgram diagram" width="500"/>
+
+     - Example of CBOW
+     <img src="https://user-images.githubusercontent.com/22868291/163096285-cced378d-a7bb-4cc0-8442-60dfdde3e36e.png" alt="cbow diagram" width="500"/>
 
 - -size: Size of the vector of each word present in the sensegram model. Set size of word vectors (default is 300). A word embedding/vector is a learned representation for text where words that have the same meaning have a similar representation. Typically, the length of these vectors 100–300 dimensions but it is recommended to use 300 as per the academic literature. FLAG NEEDED
  - -N: Number of nodes in each ego-network/sub-graphs of neighbouring words for creating the clusters/senses of a word. For example, if we set this value to be 200, while creating senses for a word, 200 nearest neighbours words will be considered for creating senses (default is 200). FLAG NEEDED
