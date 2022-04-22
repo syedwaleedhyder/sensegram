@@ -53,6 +53,18 @@ python3 1_create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/r
  - -N: Number of nodes in each ego-network/sub-graphs of neighbouring words for creating the clusters/senses of a word. For example, if we set this value to be 200, while creating senses for a word, 200 nearest neighbours words will be considered for creating senses (default is 200). Advantage of using small valus of N are that the training time is reduced and we get less noisy senses, however, due to fewer neighbours considered, few senses can be missed out. Advantage using large values of N is that we can get more variety of senses (it is not deterministic i.e. the number of senses of a word is not predictable using the value N. After a certain value we might not get additional senses), however, training time will increase and there is a chance to get noise sense as we are considering large number of neighbours to create senses. In sensegram official paper and implementation, they have used N=200.
      - Example of ego-network: 
      <img src="https://user-images.githubusercontent.com/22868291/163768199-90928b87-3385-44d5-bb57-20e07f709c67.png" alt="cbow diagram" width="500"/>
+     
+     - After creating word vectors algorithm performs the following steps:
+         - 1. Create a word similarity graph T, in which we have the distance or similarity of all the words against other words.
+         <img width="500" alt="image" src="https://user-images.githubusercontent.com/22868291/164584352-0651350c-b7ef-4d51-a40b-89c011ad8f47.png">
+
+         - 2. For every word, create an ego network using the most similar words from T. Ego network is a subgraph of T.
+         <img width="500" alt="image" src="https://user-images.githubusercontent.com/22868291/164584500-7481b0b8-6aff-4730-9377-35b955efe81b.png">
+         <img width="500" alt="image" src="https://user-images.githubusercontent.com/22868291/164584727-f0adbae9-fcba-4344-96f3-a6319123e20a.png">
+
+         - 3. Cluster the ego network using the Chinese Whispers algorithm to create the senses.
+         <img width="500" alt="image" src="https://user-images.githubusercontent.com/22868291/164585058-792213b0-aa7d-4d50-9773-e2f3f8caaf35.png">
+
  - -n: Maximum number of edges a node can have in the network (default is 200). It does not effect the results, but use N and n equal to keep consistent filenames. 
  - -num_of_models: Number of models we need to train for a single corpus. Number of models to be trained (default 1).
  - -output_models_base_path: Base path of the directory where we need to store the models. (default model/). This is the where all the trained models will be stored. Recommended to use the default path.
