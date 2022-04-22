@@ -54,7 +54,7 @@ python3 1_create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/r
      - Example of ego-network: 
      <img src="https://user-images.githubusercontent.com/22868291/163768199-90928b87-3385-44d5-bb57-20e07f709c67.png" alt="cbow diagram" width="500"/>
      
-     - After creating word vectors algorithm performs the following steps:
+     - After creating word vectors algorithm performs the following steps (visualizations created using https://projector.tensorflow.org/):
          - 1. Create a word similarity graph T, in which we have the distance or similarity of all the words against other words.
          <img width="500" alt="image" src="https://user-images.githubusercontent.com/22868291/164584352-0651350c-b7ef-4d51-a40b-89c011ad8f47.png">
 
