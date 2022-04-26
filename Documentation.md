@@ -25,11 +25,11 @@ While working on other projects, make sure that the **sensegram_env** is not act
 # Train models from a given corpus
 
 ```
-usage: 1_create_multiple_models_from_raw_text_file.py [-h] [-cbow CBOW] [-size SIZE] [-N N] [-n N] [-num_of_models NUM_OF_MODELS] [-output_models_base_path OUTPUT_MODELS_BASE_PATH] train_corpus
+usage: 1_create_multiple_models_from_raw_text_file.py [-h] [-cbow CBOW] [-size SIZE] [-window WINDOW] [-threads THREADS] [-iter ITER] [-min_count MIN_COUNT] [-N N] [-n N] [-num_of_models NUM_OF_MODELS] [-min_size MIN_SIZE] [-make-pcz] [-output_models_base_path OUTPUT_MODELS_BASE_PATH] train_corpus
 ```
 ## Command:
 ```
-python3 1_create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/raw_corpus/Ea_L_17547339_W_185687361new.txt -cbow 1 -size 300 -N 300 -n 300 -num_of_models 10 -output_models_base_path model/
+python3 1_create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/raw_corpus/Ea_L_17547339_W_185687361new.txt -cbow 1 -size 300 -window 5 -threads 40 -iter 5 -min_count 10 -min_size 5 -make-pcz -N 300 -n 300 -num_of_models 10 -output_models_base_path model/
 ```
 ## Inputs:
  - train_corpus: Path to a training corpus in text form. The sensgram models will be trained on this corpus. 
@@ -50,7 +50,11 @@ python3 1_create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/r
     - Example of word vector:
     <img src="https://user-images.githubusercontent.com/22868291/163768572-9b343113-70f6-485b-a899-48229f41949e.png" alt="cbow diagram" width="500"/>
 
- - -N: Number of nodes in each ego-network/sub-graphs of neighbouring words for creating the clusters/senses of a word. For example, if we set this value to be 200, while creating senses for a word, 200 nearest neighbours words will be considered for creating senses (default is 200). Advantage of using small valus of N are that the training time is reduced and we get less noisy senses, however, due to fewer neighbours considered, few senses can be missed out. Advantage using large values of N is that we can get more variety of senses (it is not deterministic i.e. the number of senses of a word is not predictable using the value N. After a certain value we might not get additional senses), however, training time will increase and there is a chance to get noise sense as we are considering large number of neighbours to create senses. In sensegram official paper and implementation, they have used N=200.
+ - -window: Set max skip length between words (default is 5).
+ - -threads: Use <int> threads (default 40).
+ - -iter: Run <int> training iterations (default 5).
+ - -min_count: This will discard words that appear less than <int> times (default is 10).
+ -  -N: Number of nodes in each ego-network/sub-graphs of neighbouring words for creating the clusters/senses of a word. For example, if we set this value to be 200, while creating senses for a word, 200 nearest neighbours words will be considered for creating senses (default is 200). Advantage of using small valus of N are that the training time is reduced and we get less noisy senses, however, due to fewer neighbours considered, few senses can be missed out. Advantage using large values of N is that we can get more variety of senses (it is not deterministic i.e. the number of senses of a word is not predictable using the value N. After a certain value we might not get additional senses), however, training time will increase and there is a chance to get noise sense as we are considering large number of neighbours to create senses. In sensegram official paper and implementation, they have used N=200.
      - Example of ego-network: 
      <img src="https://user-images.githubusercontent.com/22868291/163768199-90928b87-3385-44d5-bb57-20e07f709c67.png" alt="cbow diagram" width="500"/>
      
@@ -67,6 +71,8 @@ python3 1_create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/r
 
  - -n: Maximum number of edges a node can have in the network (default is 200). It does not effect the results, but use N and n equal to keep consistent filenames. 
  - -num_of_models: Number of models we need to train for a single corpus. Number of models to be trained (default 1).
+ - -min_size: Minimum size of the cluster (default is 5).
+ -  -make-pcz: Perform two extra steps to label the original sense inventory with hypernymy labels and disambiguate the list of related words.The obtained resource is called proto-concepualization or PCZ.
  - -output_models_base_path: Base path of the directory where we need to store the models. (default model/). This is the where all the trained models will be stored. Recommended to use the default path.
 
 ## Outputs:
