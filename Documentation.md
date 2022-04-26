@@ -31,6 +31,11 @@ usage: 1_create_multiple_models_from_raw_text_file.py [-h] [-cbow CBOW] [-size S
 ```
 python3 1_create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/raw_corpus/Ea_L_17547339_W_185687361new.txt -cbow 1 -size 300 -window 5 -threads 40 -iter 5 -min_count 10 -min_size 5 -make-pcz -N 300 -n 300 -num_of_models 10 -output_models_base_path model/
 ```
+For skip-gram model:
+```
+python3 1_create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/raw_corpus/Ea_L_17547339_W_185687361new.txt -cbow 0 -size 300 -window 5 -threads 40 -iter 5 -min_count 10 -min_size 5 -make-pcz -N 300 -n 300 -num_of_models 10 -output_models_base_path model/
+```
+
 ## Inputs:
  - train_corpus: Path to a training corpus in text form. The sensgram models will be trained on this corpus. 
  - -cbow: Select the type of Word2Vec algorithm for training the model. Use 1 for the continuous bag of words model, use 0 for the skip-gram model (default is 1). The CBOW model learns the embedding by predicting the current word based on its context. The continuous skip-gram model learns by predicting the surrounding words given a current word. The continuous skip-gram model learns by predicting the surrounding words given a current word.
