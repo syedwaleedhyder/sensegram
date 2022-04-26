@@ -25,11 +25,11 @@ While working on other projects, make sure that the **sensegram_env** is not act
 # Train models from a given corpus
 
 ```
-usage: 1_create_multiple_models_from_raw_text_file.py [-h] [-cbow CBOW] [-size SIZE] [-window WINDOW] [-threads THREADS] [-iter ITER] [-min_count MIN_COUNT] [-N N] [-n N] [-num_of_models NUM_OF_MODELS] [-min_size MIN_SIZE] [-make-pcz] [-output_models_base_path OUTPUT_MODELS_BASE_PATH] train_corpus
+usage: 1_create_multiple_models_from_raw_text_file.py [-h] [-cbow CBOW] [-size SIZE] [-window WINDOW] [-threads THREADS] [-iter ITER] [-min_count MIN_COUNT] [-N N] [-n N] [-num_of_models NUM_OF_MODELS] [-bigrams] [-min_size MIN_SIZE] [-make-pcz] [-output_models_base_path OUTPUT_MODELS_BASE_PATH] train_corpus
 ```
 ## Command:
 ```
-python3 1_create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/raw_corpus/Ea_L_17547339_W_185687361new.txt -cbow 1 -size 300 -window 5 -threads 40 -iter 5 -min_count 10 -min_size 5 -make-pcz -N 300 -n 300 -num_of_models 10 -output_models_base_path model/
+python3 1_create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/raw_corpus/Ea_L_17547339_W_185687361new.txt -cbow 1 -size 300 -window 5 -threads 40 -iter 5 -min_count 10 -bigrams -min_size 5 -make-pcz -N 300 -n 300 -num_of_models 10 -output_models_base_path model/
 ```
 For skip-gram model:
 ```
@@ -76,6 +76,7 @@ python3 1_create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/r
 
  - -n: Maximum number of edges a node can have in the network (default is 200). It does not effect the results, but use N and n equal to keep consistent filenames. 
  - -num_of_models: Number of models we need to train for a single corpus. Number of models to be trained (default 1).
+ - -bigrams: Detect bigrams in the input corpus.
  - -min_size: Minimum size of the cluster (default is 5).
  -  -make-pcz: Perform two extra steps to label the original sense inventory with hypernymy labels and disambiguate the list of related words.The obtained resource is called proto-concepualization or PCZ.
  - -output_models_base_path: Base path of the directory where we need to store the models. (default model/). This is the where all the trained models will be stored. Recommended to use the default path.
