@@ -57,7 +57,7 @@ python3 1_create_multiple_models_from_raw_text_file.py /home/sensegram/Desktop/r
 
  - -window: Set max skip length between words (default is 5).
  - -threads: Use <int> threads (default 40).
- - -iter: Run <int> training iterations (default 5).
+ - -iter: Run <int> training iterations (default 5). iter is how many times the whole corpus is used to train the word2vec model. For example, if the iter is 5, the algorithm will go over the whole corpus 5 times to create the word2vec (word vectors) model. 5 is just the default value, it is not the optimum value. We can experiment with different values for different corpora if we really want to get the best results. 
  - -min_count: This will discard words that appear less than <int> times (default is 10).
  -  -N: Number of nodes in each ego-network/sub-graphs of neighbouring words for creating the clusters/senses of a word. For example, if we set this value to be 200, while creating senses for a word, 200 nearest neighbours words will be considered for creating senses (default is 200). Advantage of using small valus of N are that the training time is reduced and we get less noisy senses, however, due to fewer neighbours considered, few senses can be missed out. Advantage using large values of N is that we can get more variety of senses (it is not deterministic i.e. the number of senses of a word is not predictable using the value N. After a certain value we might not get additional senses), however, training time will increase and there is a chance to get noise sense as we are considering large number of neighbours to create senses. In sensegram official paper and implementation, they have used N=200.
      - Example of ego-network: 
